@@ -1,0 +1,132 @@
+* {
+       padding: 0;
+       margin: 0;
+       box-sizing: border-box;
+       font-family: 'Courier New', Courier, monospace;
+       font-family: Scary Halloween Font;
+       src: url(../fonts/ScaryHalloweenFont.ttf);
+}
+
+@font-face {
+       font-family: Scary Halloween Font;
+       src: url(../fonts/ScaryHalloweenFont.ttf);
+}
+
+body {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       min-height: 100vh;
+       background: linear-gradient(#a2000a, #cf0000);
+       cursor: url(../img/mostrico.svg), default;
+}
+
+.contenedor {
+       position: relative;
+       width: 100%;
+       height: 100vh;
+       overflow: hidden;
+}
+
+.contenedor::before {
+       content: "";
+       position: absolute;
+       width: 100%;
+       height: 200px;
+       z-index: 1;
+       bottom: 0;
+       background: url(../img/fondo-halloween.avif);
+}
+
+.contenedor .circulo {
+       position:absolute;
+       top: 10%;
+       left: 50%;
+       width: 350px;
+       height: 350px;
+       border-radius: 50%;
+       transform: translateX(-50%);
+}
+
+.contenedor .circulo::before {
+       content: "";
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       border-radius: 50%;
+       background: url(../img/jack.jpeg);
+       background-size: 460px;
+       background-repeat: no-repeat;
+       background-position: center;
+       animation:  animationJack 5s ease-in-out infinite;
+}
+
+.contenedor .snow {
+       position: relative;
+       display: flex;
+}
+
+.contenedor .snow span {
+       position:relative;
+       min-width: 5px;
+       height: 5px;
+       border-radius: 50%;
+       background: #fff;
+       margin: 0 1vw;
+       box-shadow: -100px 20px 5px #fff, 100px 20px 10px #fff;
+       animation: animationNieve 15s linear infinite;
+       animation-duration: calc(75s / var(--i));
+}
+
+.contenedor .snow span:nth-child(even) {
+       min-width: 10px;
+       height: 10px;
+}
+
+/* timer */
+
+.contenedor-timer {
+       width: 100%;
+       height: 90vh;
+       margin-top: 10%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;    
+       align-items: center;
+}
+
+.contenedor-tiempos {
+       display: flex;
+       margin: 20px 0;
+       gap: 25px;
+}
+
+.contenedor-tiempos .item {
+       font-size: 28px;
+       color: #fafafa;
+       font-weight: bold;
+       text-align: center;
+       text-shadow: 2px 2px 1px #000;
+}
+
+/* Animaciones */
+@keyframes animationNieve {
+       0% {
+              transform: translateY(-10vh);
+       }
+       100% {
+              transform: translateY(100vh);
+       }
+}
+
+@keyframes animationJack {
+       0% {
+              box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.527);
+       }
+       50% {
+              box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.527);
+       }
+       100% {
+              box-shadow:-10px -10px 20px rgba(0, 0, 0, 0.527);
+       }
+}
