@@ -1,0 +1,54 @@
+@media (max-width: 420px) {
+  .contenedor {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .contenedor::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    z-index: 1;
+    bottom: 0;
+    background: url(../img/fondo-halloween.avif);
+  }
+
+  .contenedor .circulo {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
+
+  .contenedor .circulo::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: url(../img/jack.jpeg);
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: animationJack 5s ease-in-out infinite;
+  }
+
+  .contenedor-tiempos {
+    display: flex;
+    margin: 20px 0;
+    gap: 15px;
+  }
+  .contenedor-tiempos .item {
+    font-size: 15px;
+    color: #fafafa;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 1px #000;
+  }
+}
